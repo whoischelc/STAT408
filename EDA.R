@@ -17,7 +17,8 @@ data <- data[c(1:2, 21, 3:20)]
 # boxplot of total page likes
 boxplot(total_likes, horizontal=TRUE, main = "Distribution of Total Page Likes", xlab = "Total Page Likes")
 # range of total page likes
-range <-range(data[,1])
+range(data$Page.total.likes)
+mean(data$Page.total.likes)
 # number of missing data
 sum(is.na(data))
 # number of each type of post
@@ -26,5 +27,7 @@ sum(data$Type=="Link")
 sum(data$Type=="Status")
 # plot total page likes over N
 plot(data$Page.total.likes~data$N, main = "Total Page Likes", xlab="N", ylab="Total Page Likes")
+
+plot(data$Lifetime.Post.Total.Reach)
 
 colnames(data)
